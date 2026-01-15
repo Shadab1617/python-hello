@@ -7,11 +7,9 @@ build:
       - python3 -m pip install --target /app/packages -r requirements.txt
 run:
   runtime-version: 3.11
-  command: python3 -m streamlit run server.py --server.port=8501
+  command: python server.py
   network:
-    port: 8501
+    port: 8000
   env:
     - name: PORT
-      value: "8501"
-    - name: PYTHONPATH
-      value: "/app/packages"
+      value: "8000"
