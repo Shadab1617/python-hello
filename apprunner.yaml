@@ -3,11 +3,13 @@ runtime: python311
 build:
   commands:
     build:
-      - python3 -m pip install --upgrade pip
+      # - python3 -m pip install --upgrade pip
       # - python3 -m pip install --target /app/packages -r requirements.txt
+      - echo "Hello from Build phase"
 run:
   pre-run:
-    - python3 -m pip install --target /app/packages -r requirements.txt
+    - python3 -m pip install -r requirements.txt
+    - python3 -m pip install --upgrade pip
   runtime-version: 3.11
   command: python3 server.py
   network:
